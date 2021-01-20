@@ -36,7 +36,7 @@ def household_model(layout_file, group_file, d0):
         if '.xlsx' in group_file:
             groups = pd.read_excel(os.getcwd() + "\\python\\input\\" + group_file)
         elif '.csv' in group_file:
-            groups = pd.read_excel(os.getcwd() + "\\python\\input\\" + group_file)
+            groups = pd.read_csv(os.getcwd() + "\\python\\input\\" + group_file)
 
         groups = groups.sort_values(by=['GroupId'], ascending=True) #sort groups by GroupID
         groups = np.array(groups)
@@ -85,13 +85,16 @@ def household_model(layout_file, group_file, d0):
 
     # save the output file.
     coordinates["SeatingPlan"] = seating_plan
-    coordinates.to_excel(os.getcwd() +"\\python\\output\\" + layout_file, index=False)
+
+    if '.xlsx' in layout_file:
+        coordinates.to_excel(os.getcwd() +"\\python\\output\\" + layout_file, index=False)
+    elif '.csv' in layout_file:
+        coordinates.to_csv(os.getcwd() +"\\python\\output\\" + layout_file, index=False)
 
     #how many seats are occupied
     print(str(sum(coordinates["SeatingPlan"] > -1)) + " occupied seats <br>")
 
 if __name__ == "__main__":  
 
-    #household_model("example_bus_layout.xlsx", "example_groups.xlsx", 25)
     household_model(sys.argv[1], sys.argv[2], int(sys.argv[3]))     
     plot_layout_result(os.getcwd() +"\\python\\output\\" + sys.argv[1])

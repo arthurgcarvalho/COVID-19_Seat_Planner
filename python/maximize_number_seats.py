@@ -20,10 +20,8 @@ def fixed_seats_model(data_file, d0):
     try:
         if '.xlsx' in data_file:
             coordinates = pd.read_excel(os.getcwd() + "\\python\\input\\" + data_file)
-            #coordinates = pd.read_excel("c:/example_bus_layout.xlsx")
         elif '.csv' in data_file:
             coordinates = pd.read_csv(os.getcwd() + "\\python\\input\\" + data_file)
-            #coordinates = pd.read_csv("c:/example_bus_layout.csv")
         seat_loc = np.array(coordinates)
     except:
         print("Error-PY1")
@@ -82,7 +80,10 @@ def fixed_seats_model(data_file, d0):
                                                               columns=['Feature', 'X', 'Y']))
 
         # save the output file.
-        coordinates.to_excel(os.getcwd() +"\\python\\output\\" + data_file, index=False)
+        if '.xlsx' in data_file:
+            coordinates.to_excel(os.getcwd() +"\\python\\output\\" + data_file, index=False)
+        elif '.csv' in data_file:
+            coordinates.to_csv(os.getcwd() +"\\python\\output\\" + data_file, index=False)
 
         #print and return the minimum distance between selected seats as well.
         selected_distance = []  # record distance between each pair of selected seats.

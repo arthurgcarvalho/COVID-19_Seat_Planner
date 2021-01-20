@@ -12,7 +12,7 @@ import Household   from './Pages/Household.js';
 const { Title } = Typography;   
 const { Header, Content, Sider } = Layout;
 const { Option } = Select;
-const server_address = 'http://localhost:80'
+const server_address = 'http://seatplanner.fsb.miamioh.edu'
 
 class App extends Component {
 

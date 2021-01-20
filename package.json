@@ -1,5 +1,5 @@
 {
-  "name": "SeatingPlanner",
+  "name": "SeatPlanner",
   "version": "1.0.0",
   "description": "Software to allocate seats in a vehicle taking into account COVID-19 social distance constraints",
   "main": "server.js",
