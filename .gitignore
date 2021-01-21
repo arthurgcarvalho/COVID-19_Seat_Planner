@@ -1,0 +1,5 @@
+node_modules/
+client/node_modules/
+python/input
+python/output
+python/__pycache__
