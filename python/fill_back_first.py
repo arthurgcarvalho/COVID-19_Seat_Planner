@@ -96,5 +96,5 @@ def household_model(layout_file, group_file, d0):
 
 if __name__ == "__main__":  
 
-    household_model(sys.argv[1], sys.argv[2], int(sys.argv[3]))     
+    household_model(sys.argv[1], sys.argv[2], float(sys.argv[3]))     
     plot_layout_result(os.getcwd() +"\\python\\output\\" + sys.argv[1])

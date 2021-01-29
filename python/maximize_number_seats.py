@@ -98,6 +98,6 @@ def fixed_seats_model(data_file, d0):
 
 if __name__ == "__main__":
 
-    fixed_seats_model(sys.argv[1], int(sys.argv[2]))     
+    fixed_seats_model(sys.argv[1], float(sys.argv[2]))     
     plot_layout_result(os.getcwd() +"\\python\\output\\" + sys.argv[1])
     
