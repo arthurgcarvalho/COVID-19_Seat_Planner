@@ -33,10 +33,12 @@ for (s in 1:length(busSize)) {
 }
 
 
-# Plane sizes corresponding to: (https://www.seatguru.com/airlines/Delta_Airlines/Delta_Airlines_Airbus_A320_B_new.php)
-planeType = c('A320')
-planeSize = c(120) # please update the capacities according to your layout
-
+# Plane sizes corresponding to:
+# A320 - Delta (https://www.seatguru.com/airlines/Delta_Airlines/Delta_Airlines_Airbus_A320_B_new.php), 
+# A320 - JATM (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486076/), and 
+# Boeing 737-700 (https://www.ana.co.jp/en/us/travel-information/seat-map/b737-700/)
+planeType = c('A320 - Delta', 'A320 - JATM', 'Boeing737')
+planeSize = c(160, 120, 120) # please update the capacities according to your layout
 set.seed(2021) # to ensure that the data is reproducible
 
 
