@@ -10,7 +10,7 @@ import Household   from './Pages/Household.js';
 
 
 const { Title } = Typography;   
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 const { Option } = Select;
 const server_address = 'http://seatplanner.fsb.miamioh.edu'
 
@@ -183,6 +183,10 @@ class App extends Component {
                         <Content>{content}</Content>
                     </Layout>
                 </Content>
+                <Footer><center><p>Developed by <a href="http://www.users.miamioh.edu/carvalag/">Dr. Arthur Carvalho</a> (arthur.carvalho@miamioh.edu) under the CC0 V1.0 Universal License</p> 
+                               <p>Source code available at  <a href="https://github.com/arthurgcarvalho/COVID-19_Seat_Planner">https://github.com/arthurgcarvalho/COVID-19_Seat_Planner</a></p>
+                        </center>
+                </Footer>
             </Layout>
         )
     }

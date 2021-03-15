@@ -39,15 +39,10 @@ def plot_layout_result(data_file):
     )
   
     for seat_index in range(len(seats)):    
-        #rectangle = mpatch.Rectangle((seats[seat_index,0],seats[seat_index,1]), 5, 20, fill = False) #create squares centered at seat positions, length 5
-        #axs.add_artist(rectangle, )
-        #rx, ry = rectangle.get_xy()
-        #x = rx + rectangle.get_width()/2.0
-        #cy = ry + rectangle.get_height()/2.0
         if int(seats[seat_index,2]) != -1:
-            axs.annotate(int(seats[seat_index,2]),  (seats[seat_index,0], seats[seat_index,1]), color='b', weight='bold', fontsize=10, ha='center', va='center')
+            axs.annotate(int(seats[seat_index,2]),  (seats[seat_index,0], seats[seat_index,1]), color='b', weight='bold', fontsize=5, ha='center', va='center')
         else:
-            axs.annotate('X', (seats[seat_index,0], seats[seat_index,1]), color='red', weight='bold', fontsize=10, ha='center', va='center')
+            axs.annotate('X', (seats[seat_index,0], seats[seat_index,1]), color='red', weight='bold', fontsize=5, ha='center', va='center')
     
     
     plt.savefig(filename + ".pdf", dpi=300)
